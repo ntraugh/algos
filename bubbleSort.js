@@ -25,12 +25,43 @@ const bubbleSort = (array) => {
                 // reassign the second index to the tmp variable aka the first index we checked
                 array[i + 1] = tmp
 
+                // since we set sorted to true before the for loop and we found something to swap we set sorted to be false again and continue in the loop
                 sorted = false
             }
         }
     }
+    return array 
 }
 
 
 
+
+
+
+const sortAgain = (char) => {
+
+    let sorted = false; 
+
+    while(!sorted) {
+        sorted = true
+
+        for(let i = 0; i < char.length; i++) {
+            if(char[i] > char[i + 1]){
+                // swap positions
+
+                const temp = char[i]
+                char[i] = char[i + 1]
+                char[i + 1] = temp
+
+                sorted = false
+            }
+        }
+        return char
+    }
+}
+
+
 console.log(unsortedArray)
+const sorted = bubbleSort(unsortedArray)
+const sorted2 = sortAgain(unsortedArray)
+console.log(sorted, sorted2)
