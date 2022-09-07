@@ -27,7 +27,10 @@ const quickSort = (array) => {
         }
     });
 
-    
+    // now we need to call the quickSort function recursively since the array is probably not sorted on the first go round
+    // we call quickSort on the left array, then concat the pivot and the right array
+    // pivot is directly in the middle of array now because it's placed between the left and right arrays
+    return quickSort(left).concat(pivot, quickSort(right));
 
 };
 
