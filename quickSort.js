@@ -19,7 +19,16 @@ const quickSort = (array) => {
     const left = []
     const right = []
 
+    array.forEach((el) => {
+        if(pivot > el){
+            left.push(el)
+        } else {
+            right.push(el)
+        }
+    });
+
     
+
 };
 
 const sorted = quickSort(unsortedInputArray);
