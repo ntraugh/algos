@@ -52,4 +52,4 @@ const findTheSpread = (team1ppg, team2ppg2, team2AllowedPapg, team1AllowedPapg) 
     
 }
 
-console.log(findTheSpread(20.2, 27.1, 22.1, 23.4))
+console.log(findTheSpread(19.7, 23.2, 21.5, 18.9))
