@@ -89,12 +89,16 @@ console.log(rot13("test"))
 
 const spinWords = (string) => {
     const split = string.split(" ")
-    for (let i = 0; i < split.length; i++) {
-        if(split[i].length > 5) {
-            
+    let result = ""
+    split.map((str, i) => {
+        if(str.length >= 5) {
+            split[i] = str.split("").reverse().join("")
+        } else {
+            split[i] = str
         }
-    }
-    return split.join(" ")
+    result = split.join(" ")
+    })
+    return result
 }
 
 
