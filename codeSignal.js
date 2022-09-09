@@ -87,6 +87,15 @@ console.log(rot13("test"))
 // but with all five or more letter words reversed (Just like the name of this Kata). 
 // Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
 
-const spinWords = (string) {
-    
+const spinWords = (string) => {
+    const split = string.split(" ")
+    for (let i = 0; i < split.length; i++) {
+        if(split[i].length > 5) {
+            
+        }
+    }
+    return split.join(" ")
 }
+
+
+console.log(spinWords("Hey fellow warriors"))
