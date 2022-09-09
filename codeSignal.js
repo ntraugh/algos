@@ -88,21 +88,34 @@ console.log(rot13("test"))
 // Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
 
 const spinWords = (string) => {
-    const split = string.split(" ")
+    const stringToArray = string.split(" ")
     let result = ""
-    split.map((word, i) => {
+    stringToArray.map((word, i) => {
         if(word.length >= 5) {
             // if the word is greater than 5 we take the original split array at that index and change it to the reversed value of itself
-            split[i] = word.split("").reverse().join("")
+            stringToArray[i] = word.split("").reverse().join("")
         } else {
             // if it isn't 5 letters or more we assign the word back to that index in our "split" array.
-            split[i] = word
+            stringToArray[i] = word
         }
         // after the if else, but still in the map function we set our original empty string to our new "split" array, then we return that result
-    result = split.join(" ")
+    result = stringToArray.join(" ")
     })
     return result
 }
 
 
 console.log(spinWords("Hey fellow warriors"))
+
+// palindrome function
+const isPalindrome = (str) => {
+    const reversedString = str.split("").reverse().join("")
+
+    if(reversedString === str) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(isPalindrome("ama"))
