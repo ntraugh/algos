@@ -90,12 +90,15 @@ console.log(rot13("test"))
 const spinWords = (string) => {
     const split = string.split(" ")
     let result = ""
-    split.map((str, i) => {
-        if(str.length >= 5) {
-            split[i] = str.split("").reverse().join("")
+    split.map((word, i) => {
+        if(word.length >= 5) {
+            // if the word is greater than 5 we take the original split array at that index and change it to the reversed value of itself
+            split[i] = word.split("").reverse().join("")
         } else {
-            split[i] = str
+            // if it isn't 5 letters or more we assign the word back to that index in our "split" array.
+            split[i] = word
         }
+        // after the if else, but still in the map function we set our original empty string to our new "split" array, then we return that result
     result = split.join(" ")
     })
     return result
