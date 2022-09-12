@@ -119,3 +119,21 @@ const isPalindrome = (str) => {
 }
 
 console.log(isPalindrome("ama"))
+
+// Write a function named first_non_repeating_letter that takes a string input, 
+// and returns the first character that is not repeated anywhere in the string.
+
+// const firstNonRepeatingLetter = (string) => {
+    
+//     const firstCheck = string[0]
+    
+// }
+
+let a = .44
+let b = .44
+
+console.log(Math.round((a + b)))
+
+const today = new Date()
+
+console.log(today)
