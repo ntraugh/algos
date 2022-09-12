@@ -141,15 +141,12 @@ const newNew = ((a - b).toFixed(2))
 const c = 5
 
 
-
-
-
-
 const today = new Date().toLocaleDateString("en-us", {
     year: "numeric",
     month: "long",
     day: "numeric"
 })
+const today2 = new Date()
 
 // this returns the number of milliseconds since january 1st 1970
 // const newToday = Date.parse(today)
@@ -158,6 +155,7 @@ console.log(Math.ceil(number1))
 console.log(number1.toFixed(2))
 
 console.log(today)
+console.log(today2)
 
 // given a 12 hour time format, convert it to military time
 const timeConversion = (string) => {
@@ -168,6 +166,7 @@ const timeConversion = (string) => {
         if( string.substring(0,2) === "12"){
             newHour = "00"
         } else {
+            // we don't need to do anything to this since it's "AM" and the numbers will be the same from 1-11
             newHour = string.substring(0,2)
         }
     } else {
@@ -177,6 +176,20 @@ const timeConversion = (string) => {
             newHour = parseInt(string.substring(0,2), 10) + 12
         }
     }
+    // we return the string from the first colon(index of 2) up to the "A" or "P" index (8)
     return newHour + string.substring(2,8)
 
 }
+
+console.log(timeConversion("07:05:45PM"))
+
+const newObject = {
+    people: ["joey", "joy", "justin", "jefferson", "jaguar"],
+    ages: [23, 25, 26, 22, 21, 24],
+    things: "trees"
+}
+
+const longNames = newObject.people.filter((person) => person.length >= 5)
+
+console.log(newObject.people[3])
+console.log(longNames)
