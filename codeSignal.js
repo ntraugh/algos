@@ -129,11 +129,36 @@ console.log(isPalindrome("ama"))
     
 // }
 
-let a = .44
-let b = .44
+const number1 = 10.8960
+const decimal1 = "0.05667"
 
-console.log(Math.round((a + b)))
+const a = .4
+const b = .1
 
-const today = new Date()
+
+console.log(a - b)
+const newNew = ((a - b).toFixed(2))
+const c = 5
+
+
+
+
+
+
+const today = new Date().toLocaleDateString("en-us", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+})
+
+// this returns the number of milliseconds since january 1st 1970
+// const newToday = Date.parse(today)
+
+console.log(Math.ceil(number1))
+console.log(number1.toFixed(2))
 
 console.log(today)
+
+const timeConversion = (string) => {
+    
+}
