@@ -159,6 +159,24 @@ console.log(number1.toFixed(2))
 
 console.log(today)
 
+// given a 12 hour time format, convert it to military time
 const timeConversion = (string) => {
-    
+    // grabbing the letter in the string, this is either A or P
+    let amPm = string.charAt(8)
+    let newHour = ""
+    if (amPm === "A") {
+        if( string.substring(0,2) === "12"){
+            newHour = "00"
+        } else {
+            newHour = string.substring(0,2)
+        }
+    } else {
+        if(string.substring(0,2) === "12") {
+            newHour = string.substring(0,2)
+        } else {
+            newHour = parseInt(string.substring(0,2), 10) + 12
+        }
+    }
+    return newHour + string.substring(2,8)
+
 }
