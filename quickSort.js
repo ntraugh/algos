@@ -72,8 +72,25 @@ const twoArraysSimilar = (a, b) => {
     }
     if(leftArray.join("") === rightArray.reverse().join("")) return true
     return false
+
+    
 }
 
 twoArraysSimilar([1, 2, 3], [2, 1, 3])
+
+const arrayChange = (inputArray) => {
+    let count = 0
+
+    for(let i = 0; i < inputArray.length - 1; i++) {
+        // if the current index is greater than the next index
+        if(inputArray[i] >= inputArray[i + 1]){
+            // we grab the difference between the (current index number + 1) MINUS the smaller number
+            const difference = inputArray[i] + 1 - inputArray[i + 1]
+            inputArray[i + 1] = inputArray[i] + 1
+            count += difference
+        }
+    }
+    return count
+}
 
 
