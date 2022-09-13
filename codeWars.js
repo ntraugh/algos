@@ -47,7 +47,7 @@ const addBorder = (picture) => {
     // mapping over each element in the array and adding an asterik in front and behind it
     const newPic = picture.map((el) => "*" + el + "*")
 
-    // now we loop through our first[0] elements length in newPic
+    // now we loop through our first[0] element length in newPic
     // since it has the asteriks we count 5 times and every time we push an asterik into our border array
     let border = []
     for(let i = 0; i < newPic[0].length; i++) {
@@ -59,8 +59,50 @@ const addBorder = (picture) => {
     console.log(border)
     newPic.push(border)
     newPic.unshift(border)
-    console.log(newPic)
+    return newPic
 }
 
 addBorder(["abc",
 "ded"])
+
+
+// destructuring practice
+const alphabet = ["A", "B", "C", "D", "E", "F"]
+const numbers = ["1", "2", "3", "4", "5", "6"]
+
+// ...rest gives you "D", "E", "F"
+const [a, , c, ...rest] = alphabet
+
+const newArray = [...alphabet, ...numbers]
+
+function sumAndMultiply(a, b) {
+    return [a+b, a*b, a/b]
+}
+
+const [sum, multiply, division = "No division"] = sumAndMultiply(2, 3)
+
+const personOne = {
+    name: "nate",
+    age: 28,
+    favoriteFood: "Watermelon",
+    address: {
+        city: "somewhere",
+        state: "Hawaii"
+    }
+}
+
+const personTwo = {
+    name: "Joey",
+    age: 23,
+    address: {
+        city: "NewPlace",
+        state: "Virginia"
+    }
+}
+
+// default values like "Pizza" are overridden if they are stated in the actual object
+const { name: firstName, age, favoriteFood = "Pizza" } = personTwo
+
+console.log(firstName)
+console.log(favoriteFood)
+
