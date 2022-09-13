@@ -101,8 +101,14 @@ const personTwo = {
 }
 
 // default values like "Pizza" are overridden if they are stated in the actual object
-const { name: firstName, age, favoriteFood = "Pizza" } = personTwo
+// we can use the spread operator to get the rest of the object, it can be named whatever you want
+// three different ways to destructure, first is by renaming key, second by destructuring object in an object, third by grabbing default value
+const { name: firstName, address: { state }, age } = personTwo
 
-console.log(firstName)
-console.log(favoriteFood)
+function printUser(user) {
+    const { name, age, favoriteFood } = user
+    console.log(`${name} is ${age} year(s) old and their favorite food is ${favoriteFood}!`)
+}
+
+printUser(personOne)
 
