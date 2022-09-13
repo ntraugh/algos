@@ -16,3 +16,28 @@ const reverseParentheses = (inputString) => {
 }
 
 reverseParentheses("foo(bar(baz))blim")
+
+// Several people are standing in a row and need to be divided into two teams. 
+// The first person goes into team 1, the second goes into team 2, the third goes into team 1 again, the fourth into team 2, and so on.
+// Return an array of two integers, where the first element is the total weight of team 1, and the second element is the total weight of team 2
+
+const teamWeights = (a) => {
+    let leftTeam = []
+    let rightTeam = []
+
+    for(let i = 0; i < a.length; i++) {
+        if(i % 2 === 0){
+            leftTeam.push(a[i])
+        } else {
+            rightTeam.push(a[i])
+        }
+    }
+    console.log(leftTeam, rightTeam)
+
+    leftTeam = leftTeam.reduce((prev, current) => prev + current, 0)
+    rightTeam = rightTeam.reduce((prev, current) => prev + current, 0)
+    return [leftTeam, rightTeam]
+    
+}
+
+teamWeights([50, 60, 60, 45, 70])
