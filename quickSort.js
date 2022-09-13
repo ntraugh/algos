@@ -53,3 +53,27 @@ const findTheSpread = (team1ppg, team2ppg2, team2AllowedPapg, team1AllowedPapg) 
 }
 
 console.log(findTheSpread(19.7, 23.2, 21.5, 18.9))
+
+
+
+
+const twoArraysSimilar = (a, b) => {
+    // first check if they are the same and if they are just return true
+    if(a.join("") === b.join("")) console.log(true)
+
+    let leftArray = []
+    let rightArray = []
+
+    for(let i = 0; i < a.length; i++) {
+        if(a[i] !== b[i]){
+            leftArray.push(a[i])
+            rightArray.push(b[i])
+        }
+    }
+    if(leftArray.join("") === rightArray.reverse().join("")) return true
+    return false
+}
+
+twoArraysSimilar([1, 2, 3], [2, 1, 3])
+
+
