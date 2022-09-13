@@ -44,7 +44,21 @@ teamWeights([50, 60, 60, 45, 70])
 // Given a rectangular matrix of characters, add a border of asterisks(*) to it.
 
 const addBorder = (picture) => {
+    // mapping over each element in the array and adding an asterik in front and behind it
     const newPic = picture.map((el) => "*" + el + "*")
+
+    // now we loop through our first[0] elements length in newPic
+    // since it has the asteriks we count 5 times and every time we push an asterik into our border array
+    let border = []
+    for(let i = 0; i < newPic[0].length; i++) {
+        border.push("*")
+    }
+    // after our for loop border = ["*","*","*","*","*"]
+    // so we join the array by "" and then push and unshift them into our newPic array
+    border = border.join("")
+    console.log(border)
+    newPic.push(border)
+    newPic.unshift(border)
     console.log(newPic)
 }
 
