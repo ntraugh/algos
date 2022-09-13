@@ -32,12 +32,21 @@ const teamWeights = (a) => {
             rightTeam.push(a[i])
         }
     }
-    console.log(leftTeam, rightTeam)
 
     leftTeam = leftTeam.reduce((prev, current) => prev + current, 0)
     rightTeam = rightTeam.reduce((prev, current) => prev + current, 0)
     return [leftTeam, rightTeam]
-    
 }
 
 teamWeights([50, 60, 60, 45, 70])
+
+
+// Given a rectangular matrix of characters, add a border of asterisks(*) to it.
+
+const addBorder = (picture) => {
+    const newPic = picture.map((el) => "*" + el + "*")
+    console.log(newPic)
+}
+
+addBorder(["abc",
+"ded"])
