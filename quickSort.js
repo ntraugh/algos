@@ -39,10 +39,10 @@ const quickSort = (array) => {
 // console.log(sorted)
 
 const findTheSpread = (team1ppg, team2ppg2, team2AllowedPapg, team1AllowedPapg) => {
-    const firstTeamScore = (team1ppg + team2AllowedPapg) / 2
-    const secondTeamScore = (team2ppg2 + team1AllowedPapg) / 2
+    const firstTeamScore = ((team1ppg + team2AllowedPapg) / 2)
+    const secondTeamScore = ((team2ppg2 + team1AllowedPapg) / 2)
 
-    let final = firstTeamScore - secondTeamScore
+    let final = (firstTeamScore - secondTeamScore).toFixed(2)
     if(final < 0){
         final = final * -1
        return `+${final}` 
@@ -52,7 +52,7 @@ const findTheSpread = (team1ppg, team2ppg2, team2AllowedPapg, team1AllowedPapg) 
     
 }
 
-console.log(findTheSpread(19.7, 23.2, 21.5, 18.9))
+console.log(findTheSpread(26.1, 25, 25.1, 22.6))
 
 
 
