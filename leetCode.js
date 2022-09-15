@@ -37,3 +37,17 @@ const theTriplets = (nums) => {
 
 
 theTriplets([-1,0,1,2,-1,-4])
+
+
+// Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
+
+const needleInHaystack = (haystack, needle) => {
+    if(haystack.includes(needle)) {
+        console.log(haystack.indexOf(needle))
+    } else {
+        console.log(-1) 
+    }
+}
+
+needleInHaystack("mississippi", "issip")
