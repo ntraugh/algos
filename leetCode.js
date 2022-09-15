@@ -16,3 +16,24 @@ const longestPrefix = (strs) => {
     }
     return result
 }
+
+// Given an integer array nums, return all the triplets
+
+const theTriplets = (nums) => {
+    nums.sort((a, b) => a - b)
+    let results = []
+    for(let i = 0; i < nums.length; i++) {
+        if(i > 0 && nums[i] == nums [i - 1]) continue
+        for(let j = i + 1; j < nums.length; j++){ 
+            for(let k = j + 1; k < nums.length; k++){
+                if(nums[i] + nums[j] + nums[k] == 0) {
+                    results.push([nums[i], nums[j], nums[k]])
+                }
+            }
+        }
+    }
+    console.log(results)
+}
+
+
+theTriplets([-1,0,1,2,-1,-4])
