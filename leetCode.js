@@ -51,3 +51,18 @@ const needleInHaystack = (haystack, needle) => {
 }
 
 needleInHaystack("mississippi", "issip")
+
+
+
+// length of the last word in a string
+
+const lengthOfLastWord = (string) => {
+    let newArray = string.split(" ")
+
+    newArray = newArray.filter((word) => word !== "")
+
+    let num = newArray[newArray.length - 1].length
+    console.log(num)
+}
+
+lengthOfLastWord("   fly me   to   the moon  ")
