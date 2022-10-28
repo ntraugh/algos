@@ -66,3 +66,19 @@ const lengthOfLastWord = (string) => {
 }
 
 lengthOfLastWord("   fly me   to   the moon  ")
+
+
+// remove duplicates from an array
+
+const removeDuplicates = (array, val) => {
+    
+    let count = []
+    for(let i = 1; i < array.length; i++) {
+        if(array[i] !== val){
+            count.push(array[i])
+        }
+    }
+    console.log(count)
+}
+
+removeDuplicates([3,2,2,3], 3)
